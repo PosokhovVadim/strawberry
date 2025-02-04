@@ -5,13 +5,13 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/product"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/product"
 
-	"github.com/zuzaaa-dev/stawberry/internal/app/apperror"
+	"github.com/PosokhovVadim/stawberry/internal/app/apperror"
 
+	"github.com/PosokhovVadim/stawberry/internal/handler/dto"
 	"github.com/gin-gonic/gin"
-	"github.com/zuzaaa-dev/stawberry/internal/handler/dto"
 )
 
 type ProductService interface {

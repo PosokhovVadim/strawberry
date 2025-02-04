@@ -4,15 +4,15 @@ import (
 	"log"
 	"os"
 
-	"github.com/zuzaaa-dev/stawberry/internal/repository"
+	"github.com/PosokhovVadim/stawberry/internal/repository"
 
+	"github.com/PosokhovVadim/stawberry/internal/app"
+	"github.com/PosokhovVadim/stawberry/internal/config"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/offer"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/product"
+	"github.com/PosokhovVadim/stawberry/internal/handler"
+	objectstorage "github.com/PosokhovVadim/stawberry/pkg/s3"
 	"github.com/gin-gonic/gin"
-	"github.com/zuzaaa-dev/stawberry/internal/app"
-	"github.com/zuzaaa-dev/stawberry/internal/config"
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/offer"
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/product"
-	"github.com/zuzaaa-dev/stawberry/internal/handler"
-	objectstorage "github.com/zuzaaa-dev/stawberry/pkg/s3"
 )
 
 // Global variables for application state

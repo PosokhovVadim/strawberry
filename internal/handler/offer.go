@@ -6,11 +6,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/offer"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/offer"
 
+	"github.com/PosokhovVadim/stawberry/internal/handler/dto"
 	"github.com/gin-gonic/gin"
-	"github.com/zuzaaa-dev/stawberry/internal/handler/dto"
 )
 
 type OfferService interface {

@@ -3,12 +3,12 @@ package repository
 import (
 	"errors"
 
-	"github.com/zuzaaa-dev/stawberry/internal/app/apperror"
+	"github.com/PosokhovVadim/stawberry/internal/app/apperror"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/offer"
-	"github.com/zuzaaa-dev/stawberry/internal/repository/model"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/offer"
+	"github.com/PosokhovVadim/stawberry/internal/repository/model"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
 	"gorm.io/gorm"
 )
 

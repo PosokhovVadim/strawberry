@@ -3,8 +3,8 @@ package model
 import (
 	"time"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/product"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/product"
 )
 
 type Product struct {

@@ -5,7 +5,7 @@ package middleware
 //import (
 //	"net/http"
 //
-//	"github.com/zuzaaa-dev/stawberry/auth"
+//	"github.com/PosokhovVadim/stawberry/auth"
 //
 //	"github.com/gin-gonic/gin"
 //	"github.com/golang-jwt/jwt"

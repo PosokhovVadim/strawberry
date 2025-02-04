@@ -1,7 +1,7 @@
 package offer
 
 import (
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
 )
 
 type Repository interface {

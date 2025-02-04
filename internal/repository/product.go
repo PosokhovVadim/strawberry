@@ -4,12 +4,12 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/product"
-	"github.com/zuzaaa-dev/stawberry/internal/repository/model"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/product"
+	"github.com/PosokhovVadim/stawberry/internal/repository/model"
 
-	"github.com/zuzaaa-dev/stawberry/internal/app/apperror"
+	"github.com/PosokhovVadim/stawberry/internal/app/apperror"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/entity"
+	"github.com/PosokhovVadim/stawberry/internal/domain/entity"
 	"gorm.io/gorm"
 )
 

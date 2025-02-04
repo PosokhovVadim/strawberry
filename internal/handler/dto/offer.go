@@ -3,7 +3,7 @@ package dto
 import (
 	"time"
 
-	"github.com/zuzaaa-dev/stawberry/internal/domain/service/offer"
+	"github.com/PosokhovVadim/stawberry/internal/domain/service/offer"
 )
 
 type PostOfferReq struct {
