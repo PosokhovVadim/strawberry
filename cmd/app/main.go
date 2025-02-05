@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/PosokhovVadim/stawberry/internal/repository"
+	"github.com/joho/godotenv"
 
 	"github.com/PosokhovVadim/stawberry/internal/app"
 	"github.com/PosokhovVadim/stawberry/internal/config"
@@ -40,6 +41,10 @@ func main() {
 
 // initializeApp initializes all application components
 func initializeApp() error {
+	err := godotenv.Load("../../.env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	// Load configuration
 	cfg := config.LoadConfig()
 
