@@ -16,6 +16,8 @@ func SetupRouter(
 	productService ProductService,
 	offerService OfferService,
 	s3 *objectstorage.BucketBasics,
+	authService AuthService,
+	sessionManager middleware.SessionManager,
 ) *gin.Engine {
 	router := gin.New()
 
@@ -33,14 +35,17 @@ func SetupRouter(
 	})
 
 	// API routes group
-	// api := router.Group("/api")
+	api := router.Group("/api")
 	{
+		authHandler := NewAuthHandler(authService)
+
 		// Public routes
-		// public := api.Group("")
+		public := api.Group("")
 		{
 			// Auth endpoints
-			// public.POST("/auth/register", handlers.Register(db))
-			// public.POST("/auth/login", handlers.Login(db))
+			public.POST("/auth/register", authHandler.Register)
+			public.POST("/auth/login", authHandler.Login)
+			public.POST("/auth/refresh", authHandler.RefreshTokens)
 
 			// Public product search
 			// public.GET("/products/search", handlers.SearchProducts(db))
@@ -48,9 +53,10 @@ func SetupRouter(
 		}
 
 		// Protected routes
-		// protected := api.Group("")
-		// protected.Use(middleware.AuthMiddleware())
+		protected := api.Group("")
+		protected.Use(middleware.AuthMiddleware(sessionManager))
 		{
+			protected.GET("/auth/me", authHandler.Me)
 			// User profile
 			// protected.GET("/profile", handlers.GetProfile(db))
 			// protected.PUT("/profile", handlers.UpdateProfile(db))
@@ -146,4 +152,25 @@ func handleOfferError(c *gin.Context, err error) {
 		"code":    apperror.InternalError,
 		"message": "An unexpected error occurred",
 	})
+}
+
+func handleBindError(c *gin.Context, err error) {
+	c.JSON(http.StatusBadRequest, gin.H{"code": apperror.BadRequest, "message": err.Error()})
+}
+
+func handleAuthError(c *gin.Context, err error) {
+	switch {
+	// Register
+	case errors.Is(err, apperror.ErrAuthUserEmailExists):
+		c.JSON(http.StatusBadRequest, apperror.ErrAuthUserEmailExists)
+	case errors.Is(err, apperror.ErrAuthEmailFormat):
+		c.JSON(http.StatusBadRequest, apperror.ErrAuthEmailFormat)
+	case errors.Is(err, apperror.ErrAuthPassword):
+		c.JSON(http.StatusBadRequest, err)
+	// Login
+	case errors.Is(err, apperror.ErrAuthUserNotFound):
+		c.JSON(http.StatusBadRequest, apperror.ErrAuthUserNotFound)
+	default:
+		c.JSON(http.StatusBadRequest, gin.H{"code": apperror.BadRequest, "message": err.Error()})
+	}
 }
