@@ -1,5 +1,6 @@
 CREATE TABLE stores (
     id SERIAL PRIMARY KEY,
+    country ENUM('RU', 'KZ') NOT NULL DEFAULT 'RU', 
     name VARCHAR(255) NOT NULL UNIQUE,
     address_id INT REFERENCES addresses(id),
     description TEXT,
