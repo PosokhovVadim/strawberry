@@ -28,9 +28,9 @@ func LoadConfig() *Config {
 		DBPort:     getEnv("DB_PORT", "5432"),
 		ServerPort: getEnv("SERVER_PORT", "8080"),
 
-		AccessKey:     getEnv("ACCESS_KEY", "YCAJEA42mQqWIYN-INQRF0DTI"),
-		SecretKEY:     getEnv("SECRET_KEY", "YCM1PQy6UGDHD7sKi2Q3nBDDyur8fZFEfSEC33Fn"),
-		BucketName:    getEnv("BUCKET_NAME", "stawberry"),
+		AccessKey:     getEnv("ACCESS_KEY", "YCAJEFdJ9QaimwNJUjk4LB5Q4"),
+		SecretKEY:     getEnv("SECRET_KEY", "YCMRnS3_bXDj0zetOr1ZHGZ7Nc-SYrKb62lDoqkd"),
+		BucketName:    getEnv("BUCKET_NAME", "strawberry"),
 		URL:           getEnv("URL", "https://storage.yandexcloud.net"),
 		SigningRegion: getEnv("SIGNING_REGION", "ru-central1"),
 	}
