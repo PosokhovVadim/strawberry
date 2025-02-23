@@ -1,0 +1,5 @@
+CREATE TABLE countries (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,  
+    code CHAR(2) NOT NULL UNIQUE     
+);
