@@ -2,8 +2,8 @@ CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,  -- Название категории
     parent_id INT REFERENCES categories(id) ON DELETE CASCADE,  -- Родительская категория
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TRIGGER update_categories_updated_at

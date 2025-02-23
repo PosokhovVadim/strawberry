@@ -5,11 +5,11 @@ CREATE TABLE shops (
     description TEXT,
     country ENUM('RU', 'KZ') NOT NULL DEFAULT 'RU', 
     currency ENUM('RUB', 'KZT') NOT NULL DEFAULT 'RUB', 
-    created_at TIMESTAMP DEFAULT NOW(), 
-    updated_at TIMESTAMP DEFAULT NOW()  
+    created_at TIMESTAMPTZ DEFAULT NOW(), 
+    updated_at TIMESTAMPTZ DEFAULT NOW()  
 ); 
 
 CREATE TRIGGER update_updated_at
-BEFORE UPDATE ON stores
+BEFORE UPDATE ON shops
 FOR EACH ROW
 EXECUTE FUNCTION update_updated_at_column();  

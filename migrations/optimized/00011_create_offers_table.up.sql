@@ -7,8 +7,8 @@ CREATE TABLE offers (
     price NUMERIC(10, 2) NOT NULL CHECK (price >= 0),
     status ENUM('pending', 'accepted', 'rejected') NOT NULL DEFAULT 'pending', 
     expires_at TIMESTAMP NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE TRIGGER update_updated_at

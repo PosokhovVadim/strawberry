@@ -2,8 +2,8 @@ CREATE TABLE product_attributes (
     id SERIAL PRIMARY KEY,
     product_id INT REFERENCES products(id) ON DELETE CASCADE,  
     attributes JSONB NOT NULL,  -- Атрибуты товара в формате JSONB
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TRIGGER update_product_attributes_updated_at

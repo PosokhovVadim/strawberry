@@ -2,8 +2,8 @@ CREATE TABLE shop_points (
     id SERIAL PRIMARY KEY,    
     address_id INT REFERENCES addresses(id), 
     phone VARCHAR(20),
-    created_at TIMESTAMP DEFAULT NOW(), 
-    updated_at TIMESTAMP DEFAULT NOW()  
+    created_at TIMESTAMPTZ DEFAULT NOW(), 
+    updated_at TIMESTAMPTZ DEFAULT NOW()  
 ); 
 
 CREATE TRIGGER update_updated_at
